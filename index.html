@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Atingir o Orgasmo Feminino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255,0,0,0.5);
+            text-align: center;
+        }
+
+        h1 {
+            color: red;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid red;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #222;
+            color: #fff;
+        }
+
+        button {
+            background: red;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px red;
+        }
+
+        .quiz, .checkout {
+            display: none;
+        }
+
+        .question {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .options button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 10px;
+            background-color: red;
+            border-radius: 50%;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="name-step">
+        <h1>Descubra Como Atingir o Orgasmo Feminino</h1>
+        <input type="text" id="username" placeholder="Digite seu nome">
+        <br>
+        <button onclick="startQuiz()">Seguir</button>
+    </div>
+
+    <div class="container quiz" id="quiz-step">
+        <h1>Quiz Rápido</h1>
+        <div class="question" id="question"></div>
+        <div class="options">
+            <button onclick="answer(0)" id="opt0"></button>
+            <button onclick="answer(1)" id="opt1"></button>
+            <button onclick="answer(2)" id="opt2"></button>
+        </div>
+    </div>
+
+    <div class="container checkout" id="checkout-step">
+        <h1>Quase lá!</h1>
+        <p>Digite seu email para receber instruções:</p>
+        <input type="email" id="email" placeholder="seuemail@exemplo.com">
+        <br>
+        <button onclick="goWhatsApp()">Finalizar Compra</button>
+        <div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { q: "Você já conseguiu fazer alguém atingir o orgasmo?", options: ["Sim", "Não", "Mais ou menos"] },
+            { q: "Você conhece técnicas para estimular o clitóris?", options: ["Sim", "Não", "Um pouco"] },
+            { q: "Você já ouviu falar sobre zonas erógenas femininas?", options: ["Sim", "Não", "Pouco"] },
+            { q: "Você acredita que pode melhorar sua performance sexual?", options: ["Sim", "Não", "Talvez"] },
+            { q: "Quer aprender métodos que garantem resultados?", options: ["Sim", "Não", "Talvez"] },
+        ];
+
+        let currentQuestion = 0;
+
+        function startQuiz() {
+            const name = document.getElementById('username').value;
+            if(name.trim() === "") {
+                alert("Por favor, digite seu nome.");
+                return;
+            }
+            document.getElementById('name-step').style.display = 'none';
+            document.getElementById('quiz-step').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question').textContent = q.q;
+            document.getElementById('opt0').textContent = q.options[0];
+            document.getElementById('opt1').textContent = q.options[1];
+            document.getElementById('opt2').textContent = q.options[2];
+        }
+
+        function answer(option) {
+            currentQuestion++;
+            if(currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                document.getElementById('quiz-step').style.display = 'none';
+                document.getElementById('checkout-step').style.display = 'block';
+            }
+        }
+
+        function goWhatsApp() {
+            const email = document.getElementById('email').value;
+            if(email.trim() === "") {
+                alert("Digite seu email!");
+                return;
+            }
+            const phone = "855943975";
+            window.location.href = `https://wa.me/${phone}?text=Quero%20finalizar%20a%20compra,%20meu%20email%20é%20${encodeURIComponent(email)}`;
+        }
+    </script>
+</body>
+          </html>
+          
