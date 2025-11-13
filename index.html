@@ -6,29 +6,51 @@
     <title>Como Atingir o Orgasmo Feminino</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #111;
+            background: linear-gradient(135deg, #111, #2a0a0a);
             color: #fff;
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
             max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #1a1a1a;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(255,0,0,0.5);
+            width: 90%;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(255,0,0,0.6);
             text-align: center;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container.active {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
         h1 {
-            color: red;
+            color: #ff3366;
             margin-bottom: 20px;
             animation: pulse 1.5s infinite;
+            font-size: 24px;
         }
 
         @keyframes pulse {
@@ -38,29 +60,37 @@
 
         input[type="text"], input[type="email"] {
             width: 80%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            border: 2px solid red;
+            border: 2px solid #ff3366;
             border-radius: 8px;
             font-size: 16px;
             background: #222;
             color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
         }
 
         button {
-            background: red;
+            background: linear-gradient(to right, #ff3366, #ff6b6b);
             color: #fff;
             border: none;
-            padding: 12px 25px;
+            padding: 14px 30px;
             font-size: 16px;
+            font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
         }
 
         button:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 15px red;
+            box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);
         }
 
         .quiz, .checkout {
@@ -70,12 +100,20 @@
         .question {
             margin: 20px 0;
             font-size: 18px;
+            line-height: 1.5;
         }
 
         .options button {
             display: block;
             width: 80%;
             margin: 10px auto;
+            background: rgba(255, 51, 102, 0.2);
+            border: 1px solid #ff3366;
+            transition: all 0.3s ease;
+        }
+
+        .options button:hover {
+            background: rgba(255, 51, 102, 0.4);
         }
 
         .icon {
@@ -83,7 +121,7 @@
             height: 50px;
             display: inline-block;
             margin: 10px;
-            background-color: red;
+            background-color: #ff3366;
             border-radius: 50%;
             animation: bounce 1s infinite alternate;
         }
@@ -93,11 +131,68 @@
             to { transform: translateY(-10px); }
         }
 
+        .image-container {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            max-height: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, #ff3366, #ff6b6b);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #333;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .step.active {
+            background: #ff3366;
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
-    <div class="container" id="name-step">
+    <div class="container active" id="name-step">
         <h1>Descubra Como Atingir o Orgasmo Feminino</h1>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/500x200/2a0a0a/ff3366?text=Imagem+Ilustrativa" alt="Imagem ilustrativa">
+        </div>
         <input type="text" id="username" placeholder="Digite seu nome">
         <br>
         <button onclick="startQuiz()">Seguir</button>
@@ -105,6 +200,16 @@
 
     <div class="container quiz" id="quiz-step">
         <h1>Quiz Rápido</h1>
+        <div class="step-indicator">
+            <div class="step" id="step1"></div>
+            <div class="step" id="step2"></div>
+            <div class="step" id="step3"></div>
+            <div class="step" id="step4"></div>
+            <div class="step" id="step5"></div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
         <div class="question" id="question"></div>
         <div class="options">
             <button onclick="answer(0)" id="opt0"></button>
@@ -115,6 +220,9 @@
 
     <div class="container checkout" id="checkout-step">
         <h1>Quase lá!</h1>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/500x200/2a0a0a/ff3366?text=Resultados+Garantidos" alt="Imagem ilustrativa">
+        </div>
         <p>Digite seu email para receber instruções:</p>
         <input type="email" id="email" placeholder="seuemail@exemplo.com">
         <br>
@@ -143,9 +251,20 @@
                 alert("Por favor, digite seu nome.");
                 return;
             }
-            document.getElementById('name-step').style.display = 'none';
-            document.getElementById('quiz-step').style.display = 'block';
-            showQuestion();
+            
+            // Transição suave
+            const nameStep = document.getElementById('name-step');
+            nameStep.classList.remove('active');
+            
+            setTimeout(() => {
+                nameStep.style.display = 'none';
+                const quizStep = document.getElementById('quiz-step');
+                quizStep.style.display = 'block';
+                setTimeout(() => {
+                    quizStep.classList.add('active');
+                    showQuestion();
+                }, 50);
+            }, 300);
         }
 
         function showQuestion() {
@@ -154,6 +273,19 @@
             document.getElementById('opt0').textContent = q.options[0];
             document.getElementById('opt1').textContent = q.options[1];
             document.getElementById('opt2').textContent = q.options[2];
+            
+            // Atualizar indicador de progresso
+            document.getElementById('progress').style.width = `${(currentQuestion / questions.length) * 100}%`;
+            
+            // Atualizar indicadores de etapa
+            for (let i = 1; i <= 5; i++) {
+                const step = document.getElementById(`step${i}`);
+                if (i <= currentQuestion) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            }
         }
 
         function answer(option) {
@@ -161,8 +293,18 @@
             if(currentQuestion < questions.length) {
                 showQuestion();
             } else {
-                document.getElementById('quiz-step').style.display = 'none';
-                document.getElementById('checkout-step').style.display = 'block';
+                // Transição suave
+                const quizStep = document.getElementById('quiz-step');
+                quizStep.classList.remove('active');
+                
+                setTimeout(() => {
+                    quizStep.style.display = 'none';
+                    const checkoutStep = document.getElementById('checkout-step');
+                    checkoutStep.style.display = 'block';
+                    setTimeout(() => {
+                        checkoutStep.classList.add('active');
+                    }, 50);
+                }, 300);
             }
         }
 
@@ -175,7 +317,16 @@
             const phone = "855943975";
             window.location.href = `https://wa.me/${phone}?text=Quero%20finalizar%20a%20compra,%20meu%20email%20é%20${encodeURIComponent(email)}`;
         }
+
+        // Inicializar indicadores de etapa
+        window.onload = function() {
+            for (let i = 1; i <= 5; i++) {
+                const step = document.createElement('div');
+                step.className = 'step';
+                step.id = `step${i}`;
+                document.querySelector('.step-indicator').appendChild(step);
+            }
+        };
     </script>
 </body>
-          </html>
-          
+</html>
