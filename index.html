@@ -1,332 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Atingir o Orgasmo Feminino</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #111, #2a0a0a);
-            color: #fff;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 500px;
-            width: 90%;
-            margin: 20px auto;
-            padding: 30px;
-            background: rgba(26, 26, 26, 0.9);
-            border-radius: 16px;
-            box-shadow: 0 0 25px rgba(255,0,0,0.6);
-            text-align: center;
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(20px);
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .container.active {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        h1 {
-            color: #ff3366;
-            margin-bottom: 20px;
-            animation: pulse 1.5s infinite;
-            font-size: 24px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        input[type="text"], input[type="email"] {
-            width: 80%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 2px solid #ff3366;
-            border-radius: 8px;
-            font-size: 16px;
-            background: #222;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
-        }
-
-        button {
-            background: linear-gradient(to right, #ff3366, #ff6b6b);
-            color: #fff;
-            border: none;
-            padding: 14px 30px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);
-        }
-
-        .quiz, .checkout {
-            display: none;
-        }
-
-        .question {
-            margin: 20px 0;
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        .options button {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            background: rgba(255, 51, 102, 0.2);
-            border: 1px solid #ff3366;
-            transition: all 0.3s ease;
-        }
-
-        .options button:hover {
-            background: rgba(255, 51, 102, 0.4);
-        }
-
-        .icon {
-            width: 50px;
-            height: 50px;
-            display: inline-block;
-            margin: 10px;
-            background-color: #ff3366;
-            border-radius: 50%;
-            animation: bounce 1s infinite alternate;
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
-        }
-
-        .image-container {
-            margin: 20px 0;
-            border-radius: 12px;
-            overflow: hidden;
-            max-height: 200px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover {
-            transform: scale(1.02);
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .progress-bar {
-            height: 6px;
-            background: #333;
-            border-radius: 3px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background: linear-gradient(to right, #ff3366, #ff6b6b);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .step-indicator {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .step {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #333;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-        }
-
-        .step.active {
-            background: #ff3366;
-            transform: scale(1.2);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Educativo de Prazer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #1e3a8a;
+      color: white;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .photo-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .photo-section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+    }
+    .benefits {
+      margin-bottom: 30px;
+    }
+    .benefits h2 {
+      color: #1e3a8a;
+    }
+    .benefits ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .cta {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .cta a {
+      display: inline-block;
+      background-color: #f59e0b;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .cta a:hover {
+      background-color: #d97706;
+    }
+    .payment {
+      background-color: #e0e7ff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .payment p {
+      margin: 10px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e3a8a;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container active" id="name-step">
-        <h1>Descubra Como Atingir o Orgasmo Feminino</h1>
-        <div class="image-container">
-            <img src="https://via.placeholder.com/500x200/2a0a0a/ff3366?text=Imagem+Ilustrativa" alt="bts.jpg">
-        </div
-        <input type="text" id="username" placeholder="Digite seu nome">
-        <br>
-        <button onclick="startQuiz()">Seguir</button>
+
+  <div class="header">
+    <h1>Curso Educativo de Prazer</h1>
+    <p>Aprenda técnicas comprovadas de intimidade e conexão</p>
+  </div>
+
+  <div class="container">
+
+    <div class="photo-section">
+      <!-- Coloque a foto da modelo aqui -->
+      <img src="sua-foto-aqui.jpg" alt="bts.jpg">
     </div>
 
-    <div class="container quiz" id="quiz-step">
-        <h1>Quiz Rápido</h1>
-        <div class="step-indicator">
-            <div class="step" id="step1"></div>
-            <div class="step" id="step2"></div>
-            <div class="step" id="step3"></div>
-            <div class="step" id="step4"></div>
-            <div class="step" id="step5"></div>
-        </div>
-        <div class="progress-bar">
-            <div class="progress" id="progress"></div>
-        </div>
-        <div class="question" id="question"></div>
-        <div class="options">
-            <button onclick="answer(0)" id="opt0"></button>
-            <button onclick="answer(1)" id="opt1"></button>
-            <button onclick="answer(2)" id="opt2"></button>
-        </div>
+    <div class="benefits">
+      <h2>O que você vai aprender:</h2>
+      <ul>
+        <li>Técnicas práticas para aumentar a conexão</li>
+        <li>Passo a passo educativo, baseado em estudos</li>
+        <li>Dicas para melhorar intimidade e confiança</li>
+      </ul>
     </div>
 
-    <div class="container checkout" id="checkout-step">
-        <h1>Quase lá!</h1>
-        <div class="image-container">
-            <img src="https://via.placeholder.com/500x200/2a0a0a/ff3366?text=Resultados+Garantidos" alt="Imagem ilustrativa">
-        </div>
-        <p>Digite seu email para receber instruções:</p>
-        <input type="email" id="email" placeholder="seuemail@exemplo.com">
-        <br>
-        <button onclick="goWhatsApp()">Finalizar Compra</button>
-        <div>
-            <div class="icon"></div>
-            <div class="icon"></div>
-            <div class="icon"></div>
-        </div>
+    <div class="cta">
+      <a href="https://wa.me/25885943975" target="_blank">Garanta seu acesso via WhatsApp</a>
     </div>
 
-    <script>
-        const questions = [
-            { q: "Você já conseguiu fazer alguém atingir o orgasmo?", options: ["Sim", "Não", "Mais ou menos"] },
-            { q: "Você conhece técnicas para estimular o clitóris?", options: ["Sim", "Não", "Um pouco"] },
-            { q: "Você já ouviu falar sobre zonas erógenas femininas?", options: ["Sim", "Não", "Pouco"] },
-            { q: "Você acredita que pode melhorar sua performance sexual?", options: ["Sim", "Não", "Talvez"] },
-            { q: "Quer aprender métodos que garantem resultados?", options: ["Sim", "Não", "Talvez"] },
-        ];
+    <div class="payment">
+      <h2>Como pagar via PayPal:</h2>
+      <p>1️⃣ Abra o PayPal ou PayPal.me</p>
+      <p>2️⃣ Envie o valor para: <strong>hermaniocuamba2@gmail.com</strong></p>
+      <p>3️⃣ Envie o comprovante aqui no WhatsApp</p>
+      <p>4️⃣ Receba seu material educativo em até 15 minutos</p>
+    </div>
 
-        let currentQuestion = 0;
+  </div>
 
-        function startQuiz() {
-            const name = document.getElementById('username').value;
-            if(name.trim() === "") {
-                alert("Por favor, digite seu nome.");
-                return;
-            }
-            
-            // Transição suave
-            const nameStep = document.getElementById('name-step');
-            nameStep.classList.remove('active');
-            
-            setTimeout(() => {
-                nameStep.style.display = 'none';
-                const quizStep = document.getElementById('quiz-step');
-                quizStep.style.display = 'block';
-                setTimeout(() => {
-                    quizStep.classList.add('active');
-                    showQuestion();
-                }, 50);
-            }, 300);
-        }
+  <footer>
+    © 2025 Curso Educativo de Prazer - Todos os direitos reservados
+  </footer>
 
-        function showQuestion() {
-            const q = questions[currentQuestion];
-            document.getElementById('question').textContent = q.q;
-            document.getElementById('opt0').textContent = q.options[0];
-            document.getElementById('opt1').textContent = q.options[1];
-            document.getElementById('opt2').textContent = q.options[2];
-            
-            // Atualizar indicador de progresso
-            document.getElementById('progress').style.width = `${(currentQuestion / questions.length) * 100}%`;
-            
-            // Atualizar indicadores de etapa
-            for (let i = 1; i <= 5; i++) {
-                const step = document.getElementById(`step${i}`);
-                if (i <= currentQuestion) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            }
-        }
-
-        function answer(option) {
-            currentQuestion++;
-            if(currentQuestion < questions.length) {
-                showQuestion();
-            } else {
-                // Transição suave
-                const quizStep = document.getElementById('quiz-step');
-                quizStep.classList.remove('active');
-                
-                setTimeout(() => {
-                    quizStep.style.display = 'none';
-                    const checkoutStep = document.getElementById('checkout-step');
-                    checkoutStep.style.display = 'block';
-                    setTimeout(() => {
-                        checkoutStep.classList.add('active');
-                    }, 50);
-                }, 300);
-            }
-        }
-
-        function goWhatsApp() {
-            const email = document.getElementById('email').value;
-            if(email.trim() === "") {
-                alert("Digite seu email!");
-                return;
-            }
-            const phone = "855943975";
-            window.location.href = `https://wa.me/${phone}?text=Quero%20finalizar%20a%20compra,%20meu%20email%20é%20${encodeURIComponent(email)}`;
-        }
-
-        // Inicializar indicadores de etapa
-        window.onload = function() {
-            for (let i = 1; i <= 5; i++) {
-                const step = document.createElement('div');
-                step.className = 'step';
-                step.id = `step${i}`;
-                document.querySelector('.step-indicator').appendChild(step);
-            }
-        };
-    </script>
 </body>
 </html>
